@@ -10,7 +10,6 @@ It is a practice project of Node , Express , MongoDB.
         <img src="/ReadME Images/1.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
         <img src="/ReadME Images/2.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
         <img src="/ReadME Images/3.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
-        
     </div>
 </div>
 
