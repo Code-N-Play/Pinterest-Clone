@@ -1,3 +1,30 @@
 <%- include("./partials/header.ejs") %>
+<div class="profile-container">
+    <!-- Kapak Resmi -->
+    <div class="cover-photo">
+        <img id="coverImage" src="https://placehold.co/800x300" alt="Kapak Resmi">
+        <div class="edit-cover" onclick="openCoverEditor()">✎ Kapak Resmini Değiştir</div>
+    </div>
+
+    <!-- Profil Resmi -->
+    <div class="profile-picture">
+        <img id="profileImage" src="https://placehold.co/150x150" alt="Profil Fotoğrafı">
+        <div class="edit-profile" onclick="openProfileEditor()">✎</div>
+    </div>
+
+    <!-- Profil Bilgileri -->
+    <div class="profile-info">
+        <h1 id="username">Neeraj</h1>
+        <p id="bio"> Developer </p>
+        
+    </div>
+
+    <!-- Düzenleme Formu -->
+    <div class="edit-form" id="editForm">
+        <input type="text" id="editUsername" placeholder="Adınızı girin">
+        <textarea id="editBio" placeholder="Hakkınızda bir şeyler yazın..." rows="3"></textarea>
+        <button onclick="saveProfile()">Kaydet</button>
+    </div>
+</div>
 
 <%- include("./partials/footer.ejs") %>
