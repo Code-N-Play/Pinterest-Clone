@@ -1,0 +1,66 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  
+}
+.image{
+  height: 70vh;
+  width: 75vh;
+}
+.main_head{
+  font-size: 50px;
+  font-weight: 900;
+  
+}
+.btn{
+  background-color: red;
+  border-radius: 25px;
+  font-weight: bold;
+  height: 30px;
+  margin-top: -8px;
+
+}
+.btn_main{
+  background-color: red;
+  border-radius: 15px;
+  font-weight: bold;
+  height: 45px;
+  margin-top: -8px;
+
+}
+.btn_main_2{
+  background-color: rgb(209, 209, 209);
+  border: none;
+  color: black;
+  border-radius: 15px;
+  font-weight: bold;
+  height: 45px;
+  margin-top: -8px;
+
+}
+.login_card{
+  background-color: white;
+  border-radius: 15px;
+  border-color: rgb(187, 186, 186) ;
+  
+}
+
+.input_box{
+  border-radius: 15px;
+}
+.nav_bar{
+  background-color: white;
+  border: none;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
