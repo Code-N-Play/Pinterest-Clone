@@ -38,11 +38,15 @@
     </div>
   </nav>
 
-
+<form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+  <input  type="file" name="image">
+</form>
 <div class="profile_page" >
     <div >
-        <img class="proimage" src=" images/orange_icon.png" alt=" logo" srcset="">
-        
+        <img class="proimage" src="/images/uploads/<%=user.image %>" alt=" logo" srcset="">
+        <span id="uploadimage" class="spanicon">
+          <i class="icon1 hgi hgi-stroke hgi-rounded hgi-pencil-edit-01"></i>
+        </span>
     </div>
     
     
@@ -67,6 +71,13 @@
     
 </div>
 
-
+<script>
+  document.querySelector("#uploadimage").addEventListener("click",function(){
+    document.querySelector("#uploadform input").click();
+  });
+  document.querySelector("#uploadform input").addEventListener("change",function(){
+    document.querySelector("#uploadform").submit();
+  })
+</script>
 
 <%- include("./partials/footer.ejs") %>

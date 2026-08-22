@@ -80,7 +80,7 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
   border-width: 1px;
   border-color: black;
-  
+  position: relative;
  
 }
 
@@ -130,4 +130,23 @@ input::-webkit-inner-spin-button {
 .card_pera{
   margin-left: 10px;
   font-weight: 200;
+}
+
+.spanicon{
+  margin-top: -50px;
+  margin-left: 160px;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: black;
+  background-color: rgb(209, 207, 207);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.icon1{
+  color: black;
+  
 }
