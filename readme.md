@@ -16,6 +16,8 @@ It is a practice project of Node , Express , MongoDB.
 ### What it contain till now 
 - Landing page
 - login / signup 
+- Profile page
+- image updation plus
 
 ### If you want to run it in your PC then Follow steps .
 
