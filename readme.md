@@ -17,7 +17,8 @@ It is a practice project of Node , Express , MongoDB.
 - Landing page
 - login / signup 
 - Profile page
-- image updation plus
+- image updation 
+- add post page (partialy working)
 
 ### If you want to run it in your PC then Follow steps .
 
