@@ -150,3 +150,45 @@ input::-webkit-inner-spin-button {
   color: black;
   
 }
+.addnew{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addnewlable{
+  margin-top: 8px;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addform{
+  
+  margin-top: 30px;
+  margin-left: 38%;
+  
+}
+.newpostheading{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 32%;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(139, 139, 139);
+  margin-top: 100px;
+}
+.subbtn{
+  margin-top: 5px;
+  background-color: red;
+  width: 280px;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}

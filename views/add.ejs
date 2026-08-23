@@ -36,48 +36,25 @@
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
 
-<form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
-  <input  type="file" name="image">
-</form>
-<div class="profile_page" >
-    <div >
-        <img class="proimage" src="/images/uploads/<%=user.image %>" alt=" logo" srcset="">
-        <span id="uploadimage" class="spanicon">
-          <i class="icon1 hgi hgi-stroke hgi-rounded hgi-pencil-edit-01"></i>
-        </span>
-    </div>
-    
-    
-</div>
-<label class="Profilename" for="">Neeraj</label>
-<div class="addnew"><a href="/add"><label class="addnewlable">Add New Post</label></a></div>
+<h1 class="newpostheading">Create New Post</h1>
 
-<div class="container">
-    <div>
-        <div class="card">
-            <img class="card" src="images/backimage.jpg" alt="" srcset="">
-        </div>
-        <h1 class="card_Heading">Image</h1>
-        <p class="card_pera">Image Description</p>
-    </div>
-    <div>
-        <div class="card"></div>
-        <h1 class="card_Heading">hello</h1>
-        <p class="card_pera"> about</p>
-    </div>
+<div class="addform">
 
-    
+    <form action="/createpost" method="post" enctype="multipart/form-data">
+        <label style="margin-top: 10px; margin-bottom:1px" for="exampleFormControlInput1" class="form-label">Image</label><br>
+        <input type="file" style="border: 1px; " name="postimage" >
+        <br><br>
+        <label style="margin-top: 10px; margin-bottom:5px" for="exampleFormControlInput1" class="form-label">Title</label><br>
+        <input type="text" class="form-control" name="title"  placeholder="Post Title">
+        <br><br>
+        <label style="margin-top: 20px; margin-bottom:5px" for="exampleFormControlTextarea1" class="form-label">Discription</label><br>
+        <textarea class="form-control" name="discription"  rows="4" cols="23"></textarea><br>
+        <input class="subbtn" type="submit" class="form-control"  value="Create Post">
+        <br><br>
+    </form>
 </div>
 
-<script>
-  document.querySelector("#uploadimage").addEventListener("click",function(){
-    document.querySelector("#uploadform input").click();
-  });
-  document.querySelector("#uploadform input").addEventListener("change",function(){
-    document.querySelector("#uploadform").submit();
-  })
-</script>
 
 <%- include("./partials/footer.ejs") %>

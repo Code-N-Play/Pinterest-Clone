@@ -17,6 +17,15 @@ const userschema = mongoose.Schema({
   boards:{
     type: Array,
     default: []
+  },
+  post: {
+    type: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post"
+      }
+    ],
+    default: []
   }
 });
 
