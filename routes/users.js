@@ -18,15 +18,13 @@ const userschema = mongoose.Schema({
     type: Array,
     default: []
   },
-  post: {
-    type: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Post"
-      }
-    ],
-    default: []
-  }
+  post: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "post"
+    }
+  ]
+  
 });
 
 userschema.plugin(plm);

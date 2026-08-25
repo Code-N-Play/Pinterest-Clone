@@ -55,7 +55,8 @@
 }
 .nav_bar{
   background-color: white;
-  border: none;
+  border: 1px solid rgb(221, 219, 219);
+
 }
 
 
@@ -110,13 +111,14 @@ input::-webkit-inner-spin-button {
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 45px;
 }
 .card{
   height: 150px;
   width: 200px;
-  background-color: gray;
+  background-color: rgb(223, 220, 220);
   border-radius: 5px;
+  object-fit: cover;
 }
 .card:hover{
   transform: scale(1.05); 
@@ -124,7 +126,7 @@ input::-webkit-inner-spin-button {
 }
 .card_Heading{
   margin-left: 10px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .card_pera{
@@ -170,10 +172,12 @@ input::-webkit-inner-spin-button {
 }
 .addform{
   
+  width: auto;
   margin-top: 30px;
   margin-left: 38%;
-  
+
 }
+
 .newpostheading{
   margin-top: 10px;
   margin-bottom: 30px;
@@ -191,4 +195,14 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   padding: 5px;
   font-weight: 600;
+}
+.logoutbtn{
+  color: red;
+}
+.mainhead{
+  margin-top: 70px;
+  font-size: 50px;
+  font-weight: 700;
+  color: gray;
+  text-align: center;
 }
