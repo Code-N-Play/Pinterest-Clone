@@ -64,45 +64,39 @@
       <%= user?.post.length%>
     </span></h1>
 
+    <div class="container">
 
-
-  <div class="container">
-
-    <% user.post.forEach(function(elem){ %>
-
-      <div>
-        <div class="card">
-          <!-- <img class="card" src="/images/uploads/<%=user?.post[0]?.image %>" alt="" srcset="">  this is for sigle post which is uploaded first  -->
-          <img class="card" src="/images/uploads/<%= elem.image %>" alt="" srcset="">
-
+      
+        <% user.post.forEach(function(elem){ %>
+          <div class="cardbody">
+          <div >
+            <div class="card">
+              <!-- <img class="card" src="/images/uploads/<%=user?.post[0]?.image %>" alt="" srcset="">  this is for sigle post which is uploaded first  -->
+              <img class="card" src="/images/uploads/<%= elem.image %>" alt="" srcset="">
+    
+            </div>
+    
+            <form action="/deletepost" method="post">
+              <input type="hidden" name="postId" value="<%= elem._id %>">
+              <button type="submit" class="deletebtn">
+                <i class="delicon hgi hgi-stroke hgi-rounded hgi-delete-02"></i>
+              </button>
+            </form>
+    
+            <h1 class="card_Heading">
+              <%= elem.title %>
+            </h1>
+            <p class="card_pera ">
+              <%= elem.discription %>
+            </p>
+          </div>
         </div>
-
-        <form action="/deletepost" method="post">
-          <input type="hidden" name="postId" value="<%= elem._id %>">
-          <button type="submit" class="deletebtn">
-            <i class="delicon hgi hgi-stroke hgi-rounded hgi-delete-02"></i>
-          </button>
-        </form>
-
-        <h1 class="card_Heading">
-          <%= elem.title %>
-        </h1>
-        <p class="card_pera ">
-          <%= elem.discription %>
-        </p>
-      </div>
-
-      <% }) %>
-
-  </div>
-
-
-
-  <div class="bottomtext">
-    <p style="margin-top: -2px;">Designed by <a style="font-weight: 700;">Neeraj</a> Distributed by<a
-        style="font-weight: 700;"> Code-N-Play</a></p>
-  </div>
+          <% }) %>
+      
   
+    </div>
+ 
+
 
   <script>
     document.querySelector("#uploadimage").addEventListener("click", function () {

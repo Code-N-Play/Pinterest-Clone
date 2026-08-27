@@ -111,7 +111,13 @@ input::-webkit-inner-spin-button {
   padding: 40px;
   display: flex;
   flex-wrap: wrap;
-  gap: 45px;
+  gap: 20px;
+}
+.containeroffeed{
+  padding: 43px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
 }
 .card{
   height: 150px;
@@ -120,11 +126,7 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   object-fit: cover;
 }
-.card:hover{
-  transform: scale(1.05); 
-  transition: all 0.3s ;
-  box-shadow: 0 10px 20px rgba(248, 245, 245, 0.2);
-}
+
 .card_Heading{
   margin-top: 5px;
   margin-left: 10px;
@@ -132,7 +134,7 @@ input::-webkit-inner-spin-button {
 }
 
 .card_pera{
-  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
   font-weight: 200;
   width: 200px;
 
@@ -245,4 +247,15 @@ input::-webkit-inner-spin-button {
   height: 10px;
   background-color: green;
   
+}
+.cardbody{
+  height: 290px;
+  width: 220px;
+  border: 1px solid rgba(148, 146, 146, 0.295);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+  box-shadow: 5 10px 20px rgba(248, 245, 245, 0.2);
 }
