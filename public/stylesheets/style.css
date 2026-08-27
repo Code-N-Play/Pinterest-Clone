@@ -108,7 +108,7 @@ input::-webkit-inner-spin-button {
 
 }
 .container{
-  padding: 30px;
+  padding: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 45px;
@@ -122,9 +122,11 @@ input::-webkit-inner-spin-button {
 }
 .card:hover{
   transform: scale(1.05); 
+  transition: all 0.3s ;
   box-shadow: 0 10px 20px rgba(248, 245, 245, 0.2);
 }
 .card_Heading{
+  margin-top: 5px;
   margin-left: 10px;
   font-weight: 700;
 }
@@ -132,6 +134,8 @@ input::-webkit-inner-spin-button {
 .card_pera{
   margin-left: 10px;
   font-weight: 200;
+  width: 200px;
+
 }
 
 .spanicon{
@@ -205,4 +209,40 @@ input::-webkit-inner-spin-button {
   font-weight: 700;
   color: gray;
   text-align: center;
+}
+.deletebtn{
+  margin-top: -35px;
+  margin-left: 165px;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgb(252, 207, 207);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delicon{
+  color: red;
+  font-weight: 700;
+}
+.count{
+  margin-left: 40px;
+}
+
+
+.bottomtext{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 10px;
+  color: rgb(122, 122, 122);
+  text-wrap: wrap;
+  
+}
+.active{
+  width: 50px;
+  height: 10px;
+  background-color: green;
+  
 }

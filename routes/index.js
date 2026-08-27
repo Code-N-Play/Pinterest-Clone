@@ -56,6 +56,23 @@ router.post("/fileupload", isLoggedIn, upload.single("image"), async function(re
   res.redirect("/profile");
 });
 
+router.post("/deletepost", isLoggedIn , async function(req,res,next){
+  // const postdelete = await postmodel.findOneDelete({})
+  // await post.save();
+  // res.redirect("/profile");
+  const { postId } = req.body;
+  await postmodel.findByIdAndDelete(postId);
+  res.redirect("/profile");
+});
+
+router.get('/about' , function(req,res){
+  res.render("about");
+});
+
+router.get('/termandcondition' , function(req,res){
+  res.render("termandcondition");
+});
+
 router.post('/',function(req,res){
   var userdata = new usermodel({
     username:req.body.username,
