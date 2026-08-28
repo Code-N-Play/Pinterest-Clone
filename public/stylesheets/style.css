@@ -259,3 +259,29 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
   box-shadow: 5 10px 20px rgba(248, 245, 245, 0.2);
 }
+
+
+.userimg{
+  height: 25px;
+  width: 25px;
+  background-color: blueviolet;
+  border-radius: 50%;
+}
+.userdetails{
+  padding: 10px 10px 10px 10px;
+  font-weight: 200;
+  width: 200px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.postfeture{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 180, 215, 0.486);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}

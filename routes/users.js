@@ -10,6 +10,10 @@ const userschema = mongoose.Schema({
   contact: Number,
   password : String,
   image:String,
+  followers:{
+    type:Number,
+    default:0
+  },
   dob:{
     type: Date,
     default:Date.now()

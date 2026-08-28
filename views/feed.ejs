@@ -1,18 +1,24 @@
 <%- include("./partials/header.ejs") %>
 
-<nav class="nav_bar bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
+  <nav class="nav_bar bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/profile" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
-          <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Pinterest</span>
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
+        <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Pinterest</span>
       </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+          viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+        </svg>
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-          
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+
           <li>
             <a href="/about"
               class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
@@ -42,27 +48,77 @@
 
 
   <h1 class="mainhead">Public Feeds</h1>
-<div style="margin-top: 10px;" class="containeroffeed">
-  
+  <div style="margin-top: 10px;" class="containeroffeed">
+
     <% posts.forEach(function(elem){ %>
+      <div class="cardbody">
+        <div>
+          <div class="card">
+            <!-- <img class="card" src="/images/uploads/<%=user?.post[0]?.image %>" alt="" srcset="">  this is for sigle post which is uploaded first  -->
+            <img class="card" src="/images/uploads/<%= elem.image %>" alt="" srcset="">
+          </div>
 
-      <div>
-        <div class="card">
-          <!-- <img class="card" src="/images/uploads/<%=user?.post[0]?.image %>" alt="" srcset="">  this is for sigle post which is uploaded first  -->
-         <img class="card" src="/images/uploads/<%= elem.image %>" alt="" srcset=""> 
-       </div>
-       <h1 class="card_Heading"><%= elem.title %> </h1>
-       <p class="card_pera"><%= elem.user.username %></p>
+          <h1 class="card_Heading">
+            <%= elem.title %>
+          </h1>
+          <div class="userdetails">
+            <div class="postedby">
+              <img class="userimg" src="/images/uploads/<%=elem.user?.image %>" alt="">
+            </div>
+            <p>@<%= elem.user.username %></p>
+          </div>
+
+          <div class="userdetails" >
+            <form action="/follow" method="post">
+              <input type="hidden" name="userId" value="<%= elem._id %>">
+              <button type="submit" class="postfeture" >
+                <i class="hgi hgi-stroke hgi-rounded hgi-user-love-01"></i>
+              </button>
+            </form>
+
+            <a class="postfeture" id="liked">
+              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-up"></i>
+            </a>
+
+            <a class="postfeture" id="disliked">
+              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-down"></i>
+            </a>
+
+          </div>
+        </div>
       </div>
+      <% }) %>
 
-    <% }) %>
 
-  
-</div>
+  </div>
 
-<div class="bottomtext">
-  <p style="margin-top: -2px;">Designed by <a style="font-weight: 700;">Neeraj</a> Distributed by<a
-      style="font-weight: 700;"> Code-N-Play</a></p>
-</div>
+  <div class="bottomtext">
+    <p style="margin-top: -2px;">Designed by <a style="font-weight: 700;">Neeraj</a> Distributed by<a
+        style="font-weight: 700;"> Code-N-Play</a></p>
+  </div>
 
-<%- include("./partials/footer.ejs") %>
+  <script>
+    const followcount = document.getElementById('followed').addEventListener("click",async  function(){
+      const userID = this.dataset.userID;
+      const response = await fetch(`/users/${userID}/follow`,{method:"POST"});
+      const data = await response.json();
+    });
+
+
+
+    const likecount = document.getElementById('liked');
+    const dislikecount = document.getElementById('disliked');
+
+    followcount.onclick = function(){
+
+    }
+    likecount.onclick = function(){
+
+    }
+    dislikecount.onclick = function(){
+
+    }
+
+  </script>
+
+  <%- include("./partials/footer.ejs") %>

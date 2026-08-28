@@ -65,6 +65,14 @@ router.post("/deletepost", isLoggedIn , async function(req,res,next){
   res.redirect("/profile");
 });
 
+// update 
+router.post('/follow' , async function(req,res,next){
+  const {userId} =req.body;
+    await usermodel.findByIdAndUpdate(
+    userId,{$inc:{followers:1}},{new:true});
+    res.redirect("/feed");
+});
+
 router.get('/about' , function(req,res){
   res.render("about");
 });

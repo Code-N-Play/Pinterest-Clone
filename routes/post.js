@@ -7,7 +7,15 @@ const postSchema = mongoose.Schema({
   },
   title:String,
   discription: String,
-  image:String
+  image:String,
+  like:{
+    type:Number,
+    default:0
+  },
+  dislike:{
+    type:Number,
+    default:0
+  }
 });
 
 
