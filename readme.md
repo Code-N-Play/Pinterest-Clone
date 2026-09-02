@@ -17,8 +17,17 @@ It is a practice project of Node , Express , MongoDB.
 - Landing page
 - login / signup 
 - Profile page
-- image updation 
-- add post page (partialy working)
+ 1. set profile image
+ 2. add post
+ 3. delete post
+- Create new post page
+- Feed
+1. Follow............ (under development  still facing issue)
+2. Like.............. (under development   still facing issue)
+3. Dislike........... (under development   still facing issue)
+- Logout
+- About us
+- Terms & Condition
 
 ### If you want to run it in your PC then Follow steps .
 
