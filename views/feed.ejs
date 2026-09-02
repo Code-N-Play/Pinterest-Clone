@@ -65,23 +65,26 @@
             <div class="postedby">
               <img class="userimg" src="/images/uploads/<%=elem.user?.image %>" alt="">
             </div>
-            <p>@<%= elem.user.username %></p>
+            
+            <p>@ <%= elem.user?.username %> </p>
+
           </div>
 
           <div class="userdetails" >
-            <form action="/follow" method="post">
-              <input type="hidden" name="userId" value="<%= elem._id %>">
-              <button type="submit" class="postfeture" >
-                <i class="hgi hgi-stroke hgi-rounded hgi-user-love-01"></i>
-              </button>
-            </form>
 
-            <a class="postfeture" id="liked">
-              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-up"></i>
+            <a class="postfeture" id="follow" href="/follow/user/<%= elem._id %>">
+              <i class="hgi hgi-stroke hgi-rounded hgi-add-male"></i>
+              <span><%= elem.user.followers.length %></span>
             </a>
 
-            <a class="postfeture" id="disliked">
+            <a class="postfeture" id="liked" href="/like/post/<%= elem._id %>">
+              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-up"></i>
+              <span><%= elem.likes.length %></span>
+            </a>
+
+            <a class="postfeture" id="disliked" href="/dislike/post/<%= elem._id %>">
               <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-down"></i>
+              <span><%= elem.dislikes.length %></span>
             </a>
 
           </div>
@@ -98,25 +101,28 @@
   </div>
 
   <script>
-    const followcount = document.getElementById('followed').addEventListener("click",async  function(){
-      const userID = this.dataset.userID;
-      const response = await fetch(`/users/${userID}/follow`,{method:"POST"});
+    // like 
+    async function likePost(postId){
+      const response = await fetch(`/posts/${postId}/like`, {
+        method: "POST"
+      });
       const data = await response.json();
-    });
-
-
-
-    const likecount = document.getElementById('liked');
-    const dislikecount = document.getElementById('disliked');
-
-    followcount.onclick = function(){
-
+      console.log(data);
     }
-    likecount.onclick = function(){
 
-    }
-    dislikecount.onclick = function(){
+    // follow
 
+    async function followUser(userId){
+      const response = await fetch(`/users/${userId}/follow`,{
+        method:"POST"
+      });
+      const data = await response.json();
+      const button = document.getElementById(`follow-btn-${userId}`);
+      if(data.following){
+        button.innerText = "Following";
+      }else{
+        button.innerText = "Follow";
+      }
     }
 
   </script>

@@ -10,10 +10,6 @@ const userschema = mongoose.Schema({
   contact: Number,
   password : String,
   image:String,
-  followers:{
-    type:Number,
-    default:0
-  },
   dob:{
     type: Date,
     default:Date.now()
@@ -27,7 +23,15 @@ const userschema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "post"
     }
-  ]
+  ],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "login"
+  }],
+  following: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "login"
+  }]
   
 });
 
