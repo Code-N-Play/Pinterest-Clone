@@ -43,6 +43,3 @@ It is a practice project of Node , Express , MongoDB.
 - Run by a command nodemon .
 
 
-
-
-" IT IS NOT FULLY READY YET........ "
