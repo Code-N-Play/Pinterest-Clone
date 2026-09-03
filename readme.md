@@ -22,9 +22,10 @@ It is a practice project of Node , Express , MongoDB.
  3. delete post
 - Create new post page
 - Feed
-1. Follow............ (under development  still facing issue)
-2. Like.............. (under development   still facing issue)
-3. Dislike........... (under development   still facing issue)
+1. Follow
+2. Like
+3. Dislike
+4. Search ...............under development
 - Logout
 - About us
 - Terms & Condition
