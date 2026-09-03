@@ -7,9 +7,14 @@ It is a practice project of Node , Express , MongoDB.
 
 <div style="display: flex;flex-direction: column; grid-gap: 10px;">
      <div style="display: flex; grid-gap: 10px;">
-        <img src="/ReadME Images/1.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
-        <img src="/ReadME Images/2.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
-        <img src="/ReadME Images/3.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/Landing page.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/login.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/signup.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/profile.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/create post.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/public feed.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/terms.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
+        <img src="/ReadME Images/about.png" alt="screenshots" width="49%" style="border: 2px solid lightgreen"/>
     </div>
 </div>
 
@@ -25,7 +30,6 @@ It is a practice project of Node , Express , MongoDB.
 1. Follow
 2. Like
 3. Dislike
-4. Search ...............under development
 - Logout
 - About us
 - Terms & Condition
