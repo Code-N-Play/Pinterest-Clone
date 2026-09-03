@@ -47,7 +47,10 @@
 
 
 
-  <h1 class="mainhead">Public Feeds</h1>
+  <div class="mainhead">
+    <h1 class="mainheading" >Public Feeds</h1>
+    <input class="searchbar" id="search" type="text" placeholder="Search">
+  </div>
   <div style="margin-top: 10px;" class="containeroffeed">
 
     <% posts.forEach(function(elem){ %>
@@ -73,17 +76,29 @@
           <div class="userdetails" >
 
             <a class="postfeture" id="follow" href="/follow/user/<%= elem._id %>">
-              <i class="hgi hgi-stroke hgi-rounded hgi-add-male"></i>
+              <% if (elem.user.followers.indexOf(user._id) !== -1) { %>
+                <i class="ri-user-follow-fill"></i> 
+              <% } else { %>
+                <i class="ri-user-follow-line"></i>
+              <% } %>
               <span><%= elem.user.followers.length %></span>
             </a>
 
             <a class="postfeture" id="liked" href="/like/post/<%= elem._id %>">
-              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-up"></i>
+              <% if (elem.likes.indexOf(user._id) !== -1) { %>
+                <i class="ri-thumb-up-fill"></i>
+              <% } else { %>
+                <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-up"></i>
+              <% } %>
               <span><%= elem.likes.length %></span>
             </a>
 
             <a class="postfeture" id="disliked" href="/dislike/post/<%= elem._id %>">
-              <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-down"></i>
+              <% if (elem.dislikes.indexOf(user._id) !== -1) { %>
+                <i class="ri-thumb-down-fill"></i>
+              <% } else { %>
+                <i class="hgi hgi-stroke hgi-rounded hgi-thumbs-down"></i>
+              <% } %>
               <span><%= elem.dislikes.length %></span>
             </a>
 
@@ -100,31 +115,7 @@
         style="font-weight: 700;"> Code-N-Play</a></p>
   </div>
 
-  <script>
-    // like 
-    async function likePost(postId){
-      const response = await fetch(`/posts/${postId}/like`, {
-        method: "POST"
-      });
-      const data = await response.json();
-      console.log(data);
-    }
 
-    // follow
 
-    async function followUser(userId){
-      const response = await fetch(`/users/${userId}/follow`,{
-        method:"POST"
-      });
-      const data = await response.json();
-      const button = document.getElementById(`follow-btn-${userId}`);
-      if(data.following){
-        button.innerText = "Following";
-      }else{
-        button.innerText = "Follow";
-      }
-    }
-
-  </script>
 
   <%- include("./partials/footer.ejs") %>

@@ -47,25 +47,50 @@
   <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
     <input type="file" name="image">
   </form>
+
+
+
+  <div>
+    
+  </div>
   <div class="profile_page">
+  
     <div>
       <img class="proimage" src="/images/uploads/<%=user.image %>" alt=" logo" srcset="">
       <span id="uploadimage" class="spanicon">
         <i class="icon1 hgi hgi-stroke hgi-rounded hgi-pencil-edit-01"></i>
       </span>
     </div>
+   
+    <div>
+      <div style="margin-bottom: 20px; ">
+        <label class="Profilename" for="">
+          <%= user.name%>
+        </label>
+      </div>
+      <div class="profile_content">
+        <div>
+          <h1 class="count" style="text-align: center; font-weight: 800; font-size:20px;"><%= user?.post.length%></h1>
+          <h1 class="count"> Posts </h1>
+        </div>
+        <div>
+          <h1 class="count" style="text-align: center; font-weight: 800; font-size:20px;"> <%= user?.followers.length%></h1>
+          <h1 class="count"> Followers</h1>
+        </div>
+        <div>
+          <h1 class="count" style="text-align: center; font-weight: 800; font-size:20px;"><%= user?.following.length%></h1>
+          <h1 class="count"> Following</h1>
+        </div>
+      </div>
+      <div class="addnew">
+        <a href="/add"><label class="addnewlable">Add New Post</label></a>
+      </div>
+    </div>
+    
   </div>
-
-  <label class="Profilename" for="">
-    <%= user.name%>
-  </label>
-  <div class="addnew"><a href="/add"><label class="addnewlable">Add New Post</label></a></div>
-  <h1 class="count"> Total Posts <span style="font-weight: 700; color:green">
-      <%= user?.post.length%>
-    </span></h1>
+  <hr style="color: rgb(215, 219, 219);">
 
     <div class="container">
-
       
         <% user.post.forEach(function(elem){ %>
           <div class="cardbody">

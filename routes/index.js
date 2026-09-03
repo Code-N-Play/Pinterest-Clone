@@ -112,8 +112,6 @@ router.get("/follow/user/:id", isLoggedIn, async function(req, res) {
 });
 
 
-
-
 // like 
 router.get("/like/post/:id", isLoggedIn , async function(req,res){
   const user = await usermodel.findOne({username : req.session.passport.user});
@@ -149,6 +147,7 @@ router.get("/dislike/post/:id", isLoggedIn , async function(req,res){
   await post.save();
   res.redirect('/feed');
 })
+
 
 
 router.get('/about', function (req, res) {
