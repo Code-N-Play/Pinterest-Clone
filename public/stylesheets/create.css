@@ -47,7 +47,10 @@
     display: flex;
     gap: 20px;
 }
-
+.inputspace{
+    width: 270px;
+    border-radius: 5px;
+}
 
 .logoutbtn{
     color: red;
