@@ -123,6 +123,8 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 .card{
   height: 150px;
@@ -315,6 +317,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   font-weight: 800;
 }
+
 
 .errorpopup{
   background-color: white;
