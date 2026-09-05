@@ -315,3 +315,10 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   font-weight: 800;
 }
+
+.errorpopup{
+  background-color: white;
+  width: 60dvh;
+  
+
+}

@@ -171,8 +171,21 @@ router.post('/', function (req, res) {
     .then(function (registereduser) {
       passport.authenticate("local")(req, res, function () {
         res.redirect('/profile');
-      })
+      });
     })
+    .catch(function (err){
+      
+      console.log("Registration error:", err);
+
+      if (err.code === 11000) {
+        return res.render("index", {
+          error: "Username already exists. Please try another username."
+        });
+      }
+      return res.render("index", {
+        error: err.message || "Something went wrong. Please try again."
+      });
+    });
 });
 
 router.post('/login', passport.authenticate("local", {
